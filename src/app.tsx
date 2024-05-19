@@ -1,33 +1,51 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
-import './app.css'
+import "./app.css";
+import TopMenu from "./components/topMenu/topMenu";
 
 export function App() {
-  const [count, setCount] = useState(0)
-
+  const websiteIcon = { width: "32px", height: "32px" };
+  const MAIN_PAGE_QUOTE =
+    "I'm not the smartest fellow in the world, but I sure can pick smart colleagues - F.D.R";
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank">
-          <img src={preactLogo} class="logo preact" alt="Preact logo" />
-        </a>
+      <div class="logo-container">
+        <div class="col-3">
+          <img src="./studybuddy_titleicon.png" class="website-icon" />
+        </div>
+        <div class="col-9">
+          <TopMenu></TopMenu>
+        </div>
       </div>
-      <h1>Vite + Preact</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.tsx</code> and save to test HMR
-        </p>
+
+      <h1 class="page-title">Study Buddy</h1>
+
+      <div class="col-12">
+        <div class="quote">{MAIN_PAGE_QUOTE}</div>
       </div>
-      <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
+      <div class="col-12" style="display: flex">
+        <div class="col-6">
+          <img
+            src="./studybuddy_friends.jpg"
+            style="width: 480px; height: 480px"
+          />
+        </div>
+        <div class="col-6">
+          <h1 style="align-text:center; color: azure">About</h1>
+          <p class="aboutus">
+            {/* 
+              write under these comments
+            */}
+            While one's own knowledge is the step toward sucess, the art of
+            accepting help is the fundamental leap towards true sucess. Here at
+            Study Buddy, we believe every student deserves that helping hand to
+            ascend to a higher level of learning. Our website provides all such
+            nessecities; be it through tutors or our very own AI assistant.
+          </p>
+        </div>
+      </div>
+
+      {/* <div class="card">
+        <blockquote>{MAIN_PAGE_QUOTE}</blockquote>
+      </div> */}
     </>
-  )
+  );
 }
